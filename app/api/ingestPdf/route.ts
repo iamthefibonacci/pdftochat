@@ -10,8 +10,11 @@ import { getAuth } from '@clerk/nextjs/server';
 const PINECONE_INDEX_NAME = process.env.PINECONE_INDEX_NAME ?? '';
 
 const pinecone = new Pinecone({
-  apiKey: process.env.PINECONE_API_KEY ?? '940fae3d-870b-41bb-b288-8ed6aa7e5d4e',
-  environment: process.env.PINECONE_ENVIRONMENT ?? '-NQJqdzUAb3QUJWW_3k9', //this is in the dashboard
+  //apiKey: process.env.PINECONE_API_KEY ?? '940fae3d-870b-41bb-b288-8ed6aa7e5d4e',
+  //environment: process.env.PINECONE_ENVIRONMENT ?? '-NQJqdzUAb3QUJWW_3k9', //this is in the dashboard
+
+  apiKey = process.env.PINECONE_API_KEY || '940fae3d-870b-41bb-b288-8ed6aa7e5d4e',
+  environment = process.env.PINECONE_ENVIRONMENT || '-NQJqdzUAb3QUJWW_3k9',
 });
 
 if (!process.env.PINECONE_INDEX_NAME) {
